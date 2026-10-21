@@ -26,10 +26,11 @@ const SCHEME = {
   Regram: "regram",
 };
 
-// 寄宿在 LiveContainer 里的客户端:名称 -> guest 的 bundle id。
-// 命中这里的客户端会经 LiveContainer 转发打开;LiveContainer 用默认 scheme。
+// 寄宿在 LiveContainer 里的客户端:名称 -> guest 的 relativeBundlePath。
+// 注意是 LC 的包目录名(bundle id + ".app",即详情页"包文件名"),不是 bundle id
+// 也不是容器 UUID。LC 更新 guest 时复用该目录名,因此更新 Regram 不需要改这里。
 const LC_HOSTED = {
-  Regram: "app.swiftgram.ios",
+  Regram: "app.swiftgram.ios.app",
 };
 
 const LC_SCHEME = "livecontainer";
